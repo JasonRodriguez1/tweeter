@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Atomic+Age|Raleway);
 @import "bootstrap";
 
 /* mixins, variables, etc. */
@@ -42,6 +43,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Atomic Age', cursive;*/
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
@@ -66,6 +69,7 @@ p {
 /* header */
 
 #logo {
+  font-family: 'Raleway', sans-serif;
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
