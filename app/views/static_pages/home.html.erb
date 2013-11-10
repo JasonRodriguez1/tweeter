@@ -1,7 +1,30 @@
-<% provide(:title, 'Home') %>
-<div class="center hero-unit">
-  <h1>Tweeter</h1>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to Tweeter</h1>
 
-<%= link_to image_tag("http://25.media.tumblr.com/9f9119bff5becd138602df5943d29ba8/tumblr_mm3cjmwaPi1r9vb4ro1_500.gif", alt: "happy tweeter") %>	
+    <h2>
+      This is the home page for the
+      Tweeter sample app based on hartl
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("http://25.media.tumblr.com/9f9119bff5becd138602df5943d29ba8/tumblr_mm3cjmwaPi1r9vb4ro1_500.gif", alt: "happy tweeter") %>	
+<% end %>
